@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+    <h1>Todoリスト一覧</h1>
+{% endblock header %}
+
+
+{% block content %}
+{% for list in object_list %}
+<ul>
+    <li><a href="{% url 'detail' list.id %}">{{list.title}}</a></li>
+</ul>
+
+
+{% endfor %}
+<p><a href="create/">新規投稿する</a></p>
+{% endblock content %}

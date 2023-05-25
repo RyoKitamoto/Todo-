@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+    <h1>新規Todo投稿画面</h1>
+{% endblock header %}
+
+
+{% block content %}
+<form method = 'post'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="投稿する">
+
+</form>
+
+{% endblock content %}

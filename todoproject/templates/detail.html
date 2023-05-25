@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block header %}
+    <h1>投稿詳細画面</h1>
+{% endblock header %}
+{% block content %}
+<table border = 1>
+    <tr>
+        <td>タイトル</td><td>{{object.title}}</td>
+    </tr>
+    <tr>
+        <td>ToDoリスト</td><td>{{object.content}}</td>
+    </tr>
+    <tr>
+        <td>担当者</td><td>{{object.pic}}</td>
+    </tr>
+</table>
+<p><a href="{% url 'update' object.id%}">投稿を編集する</a></p>
+<p><a href="{% url 'delete' object.id%}">投稿を削除する</a></p>
+<p><a href="{% url 'list' %}">リスト一覧へ</a></p>
+
+{% endblock content %}
